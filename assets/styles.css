@@ -1,0 +1,277 @@
+/* by Andy Bell - https://dev.to/hankchizljaw/a-modern-css-reset-6p3 */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  /*margin-top: 1em;*/
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Further defaults by We Sort. */
+u {
+  text-decoration: none;
+  border-bottom: 2px solid;
+}
+.ie-only {
+  font-size: 1rem;
+  color: red;
+  background: white;
+}
+
+
+/* Brand Styles */
+
+:root {
+  --flow-space: 1em;
+  --bg-color: #f9f9f9;
+  --text-color: #243b4a;
+  --light-text: #3a6078;
+  --link-color: #237742;
+  --link-hover: #59b179;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1b2c37;
+    --text-color: #f9f9f9;
+    --light-text: hsla(0, 0%, 98%, 0.658);
+    --link-color: #59b179;
+    --link-hover: #6bc98d;
+  }
+
+}
+
+
+/* Font */
+:root { font-family: 'Inter', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif; ; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+html {
+  font-size: calc(1rem + 0.175vw);
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+body * + * {
+  margin-top: 1rem; /* Adds consistent verical space between elements */
+                    /* https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/ */
+}
+
+a, a:visited {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 80rem;
+  min-height: 100vh;
+  margin: auto;
+  padding: 0px 1rem;
+}
+
+.masthead {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 2em 0;
+}
+
+.masthead .logo {
+  width: 50%;
+  margin: 0;
+  line-height: 1;
+}
+
+.masthead .logo {
+  display: block;
+  margin: .25rem 0 0 0;
+  font-style: normal;
+}
+
+.masthead nav {
+  width: 50%;
+  align-self: flex-end;
+  line-height: 1;
+}
+
+.masthead nav a {
+  margin: 0 20px 0 0;
+}
+
+.masthead nav a:hover,.masthead nav a.active {
+}
+
+main {
+  flex-grow: 2;
+  width: 100%;
+  min-height: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  width: 100%;
+  padding: 4em 0 2em 0;
+}
+
+.footer small {
+  color: var(--light-text);
+}
+
+@media screen and (max-width: 75em) {
+main {
+  max-width: 60ch;
+}
+}
+
+@media screen and (min-width: 75em) {
+.index .intro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto
+  flex-grow: 2;
+}
+
+.index .intro p {
+  width: 50%;
+  align-self: flex-end;
+  padding-right: 2rem;
+}
+
+p.lead{
+  margin-top: 0;
+}
+}
+
+.lead {
+  font-size: 1.375rem;
+}
+
+h1 {
+  font-size: calc(2rem + 1.25vw);
+  font-family: 'DM Serif Display', Times New Roman, serif;
+  font-weight: 400;
+}
+
+.meta {
+  color: var(--light-text);
+  font-style: italic;
+  display: block;
+  margin-top: 0;
+  page-break-inside: avoid;
+}
+
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+}
+
+.list-multi-col {
+	column-width: 12em;
+	column-gap: 8em;
+}
+
+.list-multi-col li{
+  page-break-inside: avoid;
+}
+
+.tiny{
+  font-size: 14px;
+  text-align: center;  
+}
+
+.tiny a {
+  text-decoration: none;
+  font-weight: 650;
+}
+
+code {
+  background-color: rgba(107,201,141,0.25);
+  padding: .125rem .25rem;
+  border-radius: 4px;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
