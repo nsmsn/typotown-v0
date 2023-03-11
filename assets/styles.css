@@ -150,27 +150,33 @@ a:hover {
 
 .masthead {
   width: 100%;
-  display: flex;
-  flex-direction: row;
   padding: 2em 0;
 }
 
-.masthead .logo {
-  width: 50%;
-  margin: 0;
-  line-height: 1;
+@media screen and (min-width: 30em) {
+  .masthead {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .masthead .logo {
+    width: 50%;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .masthead nav {
+    width: 50%;
+    align-self: flex-end;
+    line-height: 1;
+  }
+
 }
 
 .masthead .logo {
   display: block;
   margin: .25rem 0 0 0;
   font-style: normal;
-}
-
-.masthead nav {
-  width: 50%;
-  align-self: flex-end;
-  line-height: 1;
 }
 
 .masthead nav a {
@@ -229,9 +235,9 @@ p.lead{
 }
 
 h1 {
-  font-size: calc(2rem + 1.25vw);
-  font-family: 'DM Serif Display', Times New Roman, serif;
-  font-weight: 400;
+  font-size: calc(2rem + 1.75vw);
+  font-family: 'Newsreader', Times New Roman, serif;
+  font-weight: 300;
 }
 
 .meta {
@@ -274,4 +280,8 @@ code {
 
 .mt-4 {
   margin-top: 4rem;
+}
+
+.italic {
+  font-style: italic;
 }
