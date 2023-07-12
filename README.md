@@ -1,2 +1,2 @@
-# typotown
- A Personal Typography Resource
+# Typo.town
+ A personal typography resource
